@@ -1,0 +1,49 @@
+// Tworzenie tablicy książek
+const books = [
+  {
+    title: "Lalka",
+    year: 1890,
+    authorFirstName: "Bolesław",
+    authorLastName: "Prus",
+    getAuthorFullName: function () {
+      return `${this.authorFirstName} ${this.authorLastName}`;
+    }
+  },
+  {
+    title: "Pan Tadeusz",
+    year: 1834,
+    authorFirstName: "Adam",
+    authorLastName: "Mickiewicz",
+    getAuthorFullName: function () {
+      return `${this.authorFirstName} ${this.authorLastName}`;
+    }
+  },
+  {
+    title: "Quo Vadis",
+    year: 1896,
+    authorFirstName: "Henryk",
+    authorLastName: "Sienkiewicz",
+    getAuthorFullName: function () {
+      return `${this.authorFirstName} ${this.authorLastName}`;
+    }
+  },
+  {
+    title: "Krzyżacy",
+    year: 1900,
+    authorFirstName: "Henryk",
+    authorLastName: "Sienkiewicz",
+    getAuthorFullName: function () {
+      return `${this.authorFirstName} ${this.authorLastName}`;
+    }
+  }
+];
+
+// Wybrany rok
+const selectedYear = 1896;
+
+// Wypisywanie tytułu i autora książek z wybranego roku
+books.forEach(book => {
+  if (book.year === selectedYear) {
+    console.log(`Tytuł: ${book.title}, Autor: ${book.getAuthorFullName()}`);
+  }
+});
