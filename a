@@ -1,7 +1,7 @@
-Zadanie 2 (P_U03).
+ Utwórz formularz rejestracyjny zawierający odpowiednie pola i walidację
+przy użyciu JS.
 (na ocenę 3)
-• Stwórz tablicę przechowującą listę książek. Każdy element tablicy powinien być
-obiektem reprezentującym książkę o co najmniej następujących polach: tytuł, rok
-wydania, imię autora, nazwisko autora. Zainicjuj listę przynajmniej 4 książkami.
-• Obiekt powinien zawierać metodę zwracającą pełne imię i nazwisko autora.
-• Wypisz w konsoli tytuł oraz autora książek wydanych w wybranym przez siebie roku.
+• Email – pole wymagane oraz poprawna forma adresu email
+• Hasło – pole wymagające odpowiednią trudność hasła (np. min 8 znaków, 1 cyfra, 1 znak
+specjalny itp.)
+• Kraj – pole wymagane. Pole to powinno być listą do wyboru
