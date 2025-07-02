@@ -1,0 +1,103 @@
+// Tworzenie formularza
+const form = document.createElement("form");
+form.id = "registerForm";
+
+// EMAIL
+const emailLabel = document.createElement("label");
+emailLabel.textContent = "Email:";
+const emailInput = document.createElement("input");
+emailInput.type = "email";
+emailInput.id = "email";
+const emailError = document.createElement("div");
+emailError.style.color = "red";
+
+// HASŁO
+const passLabel = document.createElement("label");
+passLabel.textContent = "Hasło:";
+const passInput = document.createElement("input");
+passInput.type = "password";
+passInput.id = "password";
+const passError = document.createElement("div");
+passError.style.color = "red";
+
+// KRAJ
+const countryLabel = document.createElement("label");
+countryLabel.textContent = "Kraj:";
+const countrySelect = document.createElement("select");
+countrySelect.id = "country";
+const countryError = document.createElement("div");
+countryError.style.color = "red";
+
+// Opcje krajów
+const countries = ["-- Wybierz kraj --", "Polska", "Niemcy", "USA"];
+countries.forEach((country, i) => {
+  const option = document.createElement("option");
+  option.value = i === 0 ? "" : country;
+  option.textContent = country;
+  countrySelect.appendChild(option);
+});
+
+// Przycisk
+const submitBtn = document.createElement("button");
+submitBtn.type = "submit";
+submitBtn.textContent = "Zarejestruj";
+
+// Dodawanie do formularza
+form.appendChild(emailLabel);
+form.appendChild(emailInput);
+form.appendChild(emailError);
+
+form.appendChild(passLabel);
+form.appendChild(passInput);
+form.appendChild(passError);
+
+form.appendChild(countryLabel);
+form.appendChild(countrySelect);
+form.appendChild(countryError);
+
+form.appendChild(submitBtn);
+
+// Dodanie formularza do body
+document.body.appendChild(form);
+
+// WALIDACJA
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let isValid = true;
+
+  // Walidacja emaila
+  const email = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    emailError.textContent = "Nieprawidłowy adres email.";
+    isValid = false;
+  } else {
+    emailError.textContent = "";
+  }
+
+  // Walidacja hasła
+  const password = passInput.value;
+  const passRegex = /^(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+  if (!passRegex.test(password)) {
+    passError.textContent =
+      "Hasło musi mieć min. 8 znaków, 1 cyfrę i 1 znak specjalny.";
+    isValid = false;
+  } else {
+    passError.textContent = "";
+  }
+
+  // Walidacja kraju
+  const country = countrySelect.value;
+  if (country === "") {
+    countryError.textContent = "Wybierz kraj.";
+    isValid = false;
+  } else {
+    countryError.textContent = "";
+  }
+
+  if (isValid) {
+    alert("Rejestracja zakończona sukcesem!");
+    form.reset();
+  }
+});
