@@ -1,0 +1,7 @@
+Zadanie 2 (P_U03).
+(na ocenę 3)
+• Stwórz tablicę przechowującą listę książek. Każdy element tablicy powinien być
+obiektem reprezentującym książkę o co najmniej następujących polach: tytuł, rok
+wydania, imię autora, nazwisko autora. Zainicjuj listę przynajmniej 4 książkami.
+• Obiekt powinien zawierać metodę zwracającą pełne imię i nazwisko autora.
+• Wypisz w konsoli tytuł oraz autora książek wydanych w wybranym przez siebie roku.
